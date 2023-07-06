@@ -93,3 +93,16 @@ print("Greatest Increase in Profits: " + str(greatest_inc_date) + " ($"\
        + str(greatest_inc) + ")")
 print("Greatest Decrease in Profits: " + str(greatest_dec_date) + " ($"\
        + str(greatest_dec) + ")")
+
+# Print to txt file
+pybank_txt = os.path.join("analysis", "PyBankAnalysis.txt")
+with open(pybank_txt, "a") as f:
+    print("Financial Analysis", file=f)
+    print("--------------------------------------------------", file=f)
+    print("Total Months: " + str(month_count), file=f)
+    print("Total: $" + str(net_profit), file=f)
+    print("Average Change: $" + str(rounded_avg), file=f)
+    print("Greatest Increase in Profits: " + str(greatest_inc_date) + " ($"\
+        + str(greatest_inc) + ")", file=f)
+    print("Greatest Decrease in Profits: " + str(greatest_dec_date) + " ($"\
+        + str(greatest_dec) + ")", file=f)
