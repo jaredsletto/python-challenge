@@ -56,3 +56,18 @@ for key, value in unican_dic.items():
 print("---------------------------")
 print("Winner: " + winner)
 print("---------------------------")
+
+# Print to txt file
+pybank_txt = os.path.join("analysis", "PyPollAnalysis.txt")
+with open(pybank_txt, "a") as f:
+    print("Election Results", file=f)
+    print("---------------------------", file=f)
+    print("Total Votes: " + str(votes), file=f)
+    print("---------------------------", file=f)
+    ## Calculate the percentage of votes each candidate won
+    for key, value in unican_dic.items():
+        print(key + ": " + str(round((value/votes)*100,2)) + "% (" + str(value) +\
+               ")", file=f)
+    print("---------------------------", file=f)
+    print("Winner: " + winner, file=f)
+    print("---------------------------", file=f)
