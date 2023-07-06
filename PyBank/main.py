@@ -67,7 +67,6 @@ with open(budget_csv, encoding='UTF-8') as csv_file:
         else:
             row_change = int(row[1]) - previous_profit
             profit_change += row_change
-            profit_change += row_change
 ## Calculate the greatest increase in profits (date and amount) over the entire
 ## period
         if row_change > greatest_inc:
@@ -82,7 +81,7 @@ with open(budget_csv, encoding='UTF-8') as csv_file:
 
 ## Calculate average profit change
 avg_profit_change = (profit_change / (month_count - 1))
-rounded_avg = round(avg_profit_change,2) / 2
+rounded_avg = round(avg_profit_change,2)
 
 # Print the results
 print("Financial Analysis")
